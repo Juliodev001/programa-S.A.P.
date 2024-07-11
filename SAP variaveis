@@ -1,0 +1,60 @@
+REPORT zds_top_vendas_aul_006.
+
+*declaração de varíaveis
+DATA ld_id  TYPE i.             "numero
+DATA ld_nome(100) TYPE c.       "texto
+DATA ld_dtnasc TYPE d.          "Data
+DATA ld_hrnasc  TYPE t.         "tempo
+DATA ld_peso TYPE p DECIMALS 3. " número de decimais
+DATA ld_desc TYPE string.       " texto
+DATA ld_login(5) TYPE n.        "número
+
+* Preenchendo as varíaveis
+ld_id     = 1.
+ld_nome   ='JULIO CESAR DE ALMEIDA SILVA'.
+ld_dtnasc ='19970714'.
+ld_hrnasc ='073507'.
+ld_peso   ='80.000'.
+ld_desc   = 'Um cliente que compra em bastante peso'.
+ld_login  = '1'.
+
+
+*CRIE UM PROGRAMA QUE ARMAZE OS SEGUINTES CAMPOS DE UM CLIENTE:
+*CAMPO TIPO TAMANHO DECIMAIS
+*ld_id i
+*ld_nome c
+*ld_dtnasc d
+*id_hrnasc t
+*id_peso p 6 3
+*id_desc string
+*id_login n 5
+
+* Escrevendo dados na tela
+WRITE (12) 'dados do cliente'.
+NEW-LINE.
+
+WRITE (12)'id'.
+WRITE ld_id LEFT-JUSTIFIED.
+NEW-LINE.
+
+WRITE (12)'nome'.
+WRITE ld_nome.
+NEW-LINE.
+
+WRITE (12)'Nascimento '.
+WRITE ld_dtnasc DD/MM/YY.
+WRITE ld_hrnasc+0(2).
+WRITE ld_hrnasc+2(2).
+WRITE ld_hrnasc+4(2).
+
+WRITE (12)'peso'.
+WRITE ld_peso LEFT-JUSTIFIED.
+NEW-LINE.
+
+WRITE:(12)'Descrição'.
+WRITE: ld_desc.
+NEW-LINE.
+
+WRITE (12)'login'.
+WRITE ld_login.
+NEW-LINE.
